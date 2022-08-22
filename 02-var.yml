@@ -8,10 +8,10 @@
         msg: url == {{ url }}
 
 
-- name:
-    hosts: all
-    vars_files: demo-var.yml
-    tasks:
+- name: demo on play var files
+  hosts: all
+  vars_files: demo-var.yml
+  tasks:
       - name: print url
         ansible.builtin.debug:
           msg: url == {{ url }}
@@ -24,3 +24,18 @@
         msg: url == {{url }}
         vars:
           url: task.example.com
+
+- name: read the variable from inventory file
+  hosts: all
+  tasks:
+    - name: print url
+      ansible.builtin.debug:
+        msg: url == {{ url }}
+
+- name: variable from cli
+  hosts: all
+  tasks:
+    - name: print url
+      ansible.builtin.debug:
+        msg: url == {{ url }}
+        
