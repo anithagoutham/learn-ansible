@@ -21,7 +21,7 @@
   tasks:
     - name: print url
       ansible.builtin.debug:
-        msg: url == {{url }}
+        msg: url == {{ url }}
         vars:
           url: task.example.com
 
