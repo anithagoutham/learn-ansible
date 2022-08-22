@@ -32,10 +32,5 @@
       ansible.builtin.debug:
         msg: url == {{ url }}
 
-- name: variable from cli
-  hosts: all
-  tasks:
-    - name: print url
-      ansible.builtin.debug:
-        msg: url == {{ url }}
+
         
