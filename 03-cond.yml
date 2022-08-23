@@ -7,9 +7,11 @@
     - name : run if it is redhat family
       ansible.builtin.debug:
         msg: hello red hat
-      when: redhat
+      #when: ansible_os_family == "redhat"
+      when: redhat or ansible_os_family == "redhat"
 
     - name: run if it is a debain family
       ansible.builtin.debug:
         msg: hello debian
-      when: debain
+        #when: ansible_os_family == "debain"
+      when: debain or ansible_os_family == "debain"
