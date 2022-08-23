@@ -11,6 +11,6 @@
   hosts: all
   vars_files: demo-var.yml
   tasks:
-    - name: print url
+    - name: print URL
       ansible.builtin.debug:
         msg: url == {{ url }}
