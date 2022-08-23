@@ -1,0 +1,4 @@
+- name: demo on register
+  hosts: all
+  tasks:
+    - name: get uptime
