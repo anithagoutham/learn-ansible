@@ -15,11 +15,18 @@
     #  ansible.builtin.debug:
      #   msg: url == {{ url }}
 
-- name: demo on task level variables
+#- name: demo on task level variables
+ # hosts: all
+  #tasks:
+   # - name: print url
+    #  ansible.builtin.debug:
+     #   msg: url == {{ url }}
+      #  vars:
+       #   url: task.example.com
+
+- name: read the variable from inventory file
   hosts: all
   tasks:
     - name: print url
       ansible.builtin.debug:
-        msg: url == {{ url }}
-        vars:
-          url: task.example.com
+       msg: url == {{ url }}
