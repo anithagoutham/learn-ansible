@@ -1,12 +1,15 @@
 - name: demo on conditions
   hosts: all
+  vars:
+    redhat: true
+    debain: false
   tasks:
     - name : run if it is redhat family
       ansible.builtin.debug:
         msg: hello red hat
-      when: ansible_os_family == "redhat"
+      when: redhat
 
     - name: run if it is a debain family
       ansible.builtin.debug:
         msg: hello debian
-      when: ansible_os_family == "debain"
+      when: debain
