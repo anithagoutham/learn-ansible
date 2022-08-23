@@ -7,10 +7,19 @@
       ansible.builtin.debug:
         msg: url == {{ url }}
 
-- name: demo on play var files
+#- name: demo on play var files
+ # hosts: all
+  #vars_files: demo-var.yml
+  #tasks:
+   # - name: print url
+    #  ansible.builtin.debug:
+     #   msg: url == {{ url }}
+
+- name: demo on task level variables
   hosts: all
-  vars_files: demo-var.yml
   tasks:
-    - name: print URL
+    - name: print url
       ansible.builtin.debug:
         msg: url == {{ url }}
+        vars:
+          url: task.example.com
