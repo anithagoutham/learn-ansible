@@ -7,13 +7,13 @@
       ansible.builtin.debug:
         msg: url == {{ url }}
 
-#- name: demo on play var files
- # hosts: all
-  #vars_files: demo-var.yml
-  #tasks:
-   # - name: print url
-    #  ansible.builtin.debug:
-     #   msg: url == {{ url }}
+- name: demo on play var files
+  hosts: all
+  vars_files: demo-var.yml
+  tasks:
+    - name: print url
+      ansible.builtin.debug:
+        msg: url == {{ url }}
 
 #- name: demo on task level variables
  # hosts: all
@@ -24,9 +24,4 @@
       #  vars:
        #   url: task.example.com
 
-- name: read the variable from inventory file
-  hosts: all
-  tasks:
-    - name: print url
-      ansible.builtin.debug:
-       msg: url == {{ url }}
+
