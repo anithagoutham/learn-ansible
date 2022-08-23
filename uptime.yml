@@ -8,3 +8,7 @@
     - name: print output
       ansible.builtin.debug:
         msg: "{{shell_output.stdout}}"
+
+    - name: declare a variable
+      ansible.builtin.set_fact:
+        uptime:  "{{shell_output.stdout}}"
