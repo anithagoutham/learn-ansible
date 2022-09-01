@@ -1,6 +1,8 @@
-- name: print fact
+- name: demo on play vars
   hosts: all
+  vars:
+    url: play.example.com
   tasks:
-    - name: print hostname
+    - name: print url
       ansible.builtin.debug:
-       msg: hostname == {{ansible_hostname }}
+        msg: url == {{ url }}
