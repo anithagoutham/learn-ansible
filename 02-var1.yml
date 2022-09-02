@@ -38,7 +38,7 @@
       ansible.builtin.debug:
         msg: url == {{url}}
 
-    #- name: variable from roles
-    # hosts: all
-    #roles:
-    #- sample
+- name: variable from roles
+  hosts: all
+  roles:
+    - sample
