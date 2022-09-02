@@ -1,48 +1,7 @@
-- name: demo on play vars
-  hosts: all
-  vars:
-    url: play.example.com
-  tasks:
-    - name: print url
-      ansible.builtin.debug:
-        msg: url == {{ url }}
-
-- name: demo on play var files
-  hosts: all
-  vars_files: demo-var.yml
-  tasks:
-    - name: print url
-      ansible.builtin.debug:
-        msg: url == {{ url }}
-
-- name: demo on task level variables
+- name: demo on register
   hosts: all
   tasks:
-   - name: print url
-     ansible.builtin.debug:
-       msg: url == {{ url }}
-       vars:
-          url: task.example.com
-
-- name: read the variable from inventory file
-  hosts: all
-  tasks:
-    - name: print url
-      ansible.builtin.debug:
-        msg: url == {{ url }}
-
-
-
-    ##- name: variable from cli
-    #hosts: all
-    # tasks:
-    #  - name: print url
-    #   ansible.builtin.debug:
-    #    msg: url == {{url}}
-
-    #- name: variable from roles
-    # hosts: all
-    #roles:
-    #- sample
+   - name: get update
+     ansible.builtin.debug: uptime
 
 
