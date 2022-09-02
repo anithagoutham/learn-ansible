@@ -15,6 +15,7 @@
         - { name: apple, qty: 200}
     - name: place the result of the current item in the variable
       ansible.builtin.shell: echo "{{ item }}"
+      #this is related to loops
       loop:
         - one
         - two
