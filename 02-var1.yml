@@ -53,5 +53,5 @@
 - name: demo on register
   hosts: all
   tasks:
-    - name: get update
-      ansible.builtin.debug: uptime
+  - name: get update
+    ansible.builtin.debug: uptime
