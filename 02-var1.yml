@@ -49,3 +49,9 @@
     - name: print hostname
       ansible.builtin.debug:
         msg: hostname == {{ansible_hostname}}
+
+- name: demo on register
+  hosts: all
+  tasks:
+    - name: get update
+      ansible.builtin.debug: uptime
