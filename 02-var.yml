@@ -9,4 +9,9 @@
       ansible.builtin.debug:
         msg: "{{shell_output.stdout}}"
 
+    - name: declare variable
+      ansible.builtin.debug:
+        uptime: "{{shell_output.stdout}}"
+
+
 
